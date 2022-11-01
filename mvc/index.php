@@ -1,4 +1,5 @@
 <?php
+// session starting
 session_start();
 
 if(isset($_REQUEST["commande"])){
