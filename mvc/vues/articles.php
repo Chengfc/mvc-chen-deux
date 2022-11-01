@@ -1,24 +1,30 @@
 
 <html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="css/styles.css" />
-        <meta charset="utf-8" />
-    </head>
-    <body>
-    <?php 
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<?php 
+
 session_start();
 include('vues/navbar.php');
 if(isset($donnees["errorMsg"])){
     echo "<h3 class='alert'>".$donnees["errorMsg"]."</h3>";
 }
+
 ?>
+
 <h1>Articles</h1>
 <div class="searchform">
+
 <form action="index.php?commande=search" method="POST">
     <input type="text" name="word" />
     <button class='btn-search' type="submit">Recherche</button>
 </form>
+
 </div>
 <?php
         if(is_null($_POST['word'])){
@@ -49,9 +55,11 @@ if(isset($donnees["errorMsg"])){
                     <a href='index.php?commande=updateArticlePage&idArticle=<?php echo $article["id"]; ?>'>Modifier</a>
                     <a href='index.php?commande=deleteArticle&idArticle=<?php echo $article["id"]; ?>'>Supprimer</a>
             <?php } ?>
-        </article>
+
+         </article>
         
    <?php }} ?>
           
 </body>
+
 </html>

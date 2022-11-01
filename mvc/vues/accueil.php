@@ -1,5 +1,4 @@
 
-
 <html>
     <head>
         <title>Blog TP2</title>
@@ -8,6 +7,7 @@
     </head>
    <body>
     <?php
+     // Navigation 
      include("vues/navbar.php");
     ?>
     <?php if(isset($_SESSION['usager'])){ ?>

@@ -6,6 +6,7 @@
     </head>
     <body>
     <?php 
+
 session_start();
 include('vues/navbar.php');
 if(isset($donnees["errorMsg"])){

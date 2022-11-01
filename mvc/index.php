@@ -10,12 +10,14 @@ if(isset($_REQUEST["commande"])){
 
 require_once("modele.php");
 switch($commande){
+    // Accueil
     case "Accueil":
         $donnees["titre"] = "Page d'accueil";
         require_once("vues/header.php");
         require("vues/accueil.php");
         require_once("vues/footer.php");
         break;
+    // connecté
     case "Logged":
         if(isset($_REQUEST["username"]) && isset($_REQUEST["password"])){
               $lg = user_login($_REQUEST["username"],$_REQUEST["password"]);
@@ -56,6 +58,7 @@ switch($commande){
         require_once("vues/footer.php");
         
         break;
+    
     case "Logout":
         session_start();
         $_SESSION = array();
@@ -178,3 +181,4 @@ switch($commande){
 
     
 }
+

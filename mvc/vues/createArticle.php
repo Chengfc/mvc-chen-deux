@@ -1,20 +1,20 @@
 
 <html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="css/styles.css" />
-    </head>
-    <body>
-    <?php 
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<?php 
 session_start();
 include('vues/navbar.php');
 if(isset($donnees["errorMsg"])){
     echo "<h3 class='alert'>".$donnees["errorMsg"]."</h3>";
 }
 ?>
-<form action="index.php?commande=createArticle" class="create-article-form" method="POST">
+ <form action="index.php?commande=createArticle" class="create-article-form" method="POST">
    <div class="create-article-input">
-   <label for="titre" class="article-title-label">Titre</label>
+    <label for="titre" class="article-title-label">Titre</label>
     <input type="text" name="titre" />
    </div>
     <div class="create-article-input">
@@ -22,6 +22,7 @@ if(isset($donnees["errorMsg"])){
     <textarea name="texte"></textarea>
     </div>
     <button class="btn" type="submit">Créer un article</button>
-</form>
+ </form>
 </body>
+
 </html>
