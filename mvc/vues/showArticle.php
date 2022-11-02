@@ -4,9 +4,9 @@
         <link rel="stylesheet" href="css/styles.css" />
         <meta charset="utf-8" />
     </head>
-    <body>
-    <?php 
-session_start();
+<body>
+<?php 
+
     include('vues/navbar.php');
     if(isset($donnees["errorMsg"])){
         echo "<h3 class='alert'>".$donnees["errorMsg"]."</h3>";
@@ -16,5 +16,5 @@ session_start();
         echo "<p>".htmlspecialchars($article['texte'],ENT_QUOTES,'utf-8')."</p>";
     }
 ?>
-    </body>
+</body>
 </html>

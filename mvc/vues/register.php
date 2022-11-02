@@ -6,12 +6,13 @@
     </head>
     <body>
         <?php
-
+            // nav bar et form creation de compte afin de tester differents utilisateurs et fonctionalités du blog.
             include('vues/navbar.php');
             if(isset($donnees["errorMsg"])){
                 echo "<h3 class='alert'>".$donnees["errorMsg"]."</h3>";
             }
             ?>
+            
         <form action="index.php?commande=Register" class="login-form" method="POST">
         <div class="container">
                 <h1>Creation de compte</h1>
@@ -35,4 +36,4 @@
             </div>
         </form>
     </body>
-    </html>
+</html>

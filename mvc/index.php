@@ -1,7 +1,6 @@
 <?php
-// session starting
 session_start();
-
+// index controlleur et conditions et comportements pour chaque cas.
 if(isset($_REQUEST["commande"])){
     $commande = $_REQUEST["commande"];
 }else{
@@ -10,21 +9,23 @@ if(isset($_REQUEST["commande"])){
 
 require_once("modele.php");
 switch($commande){
-    // Accueil
     case "Accueil":
         $donnees["titre"] = "Page d'accueil";
         require_once("vues/header.php");
         require("vues/accueil.php");
         require_once("vues/footer.php");
         break;
-    // connecté
     case "Logged":
         if(isset($_REQUEST["username"]) && isset($_REQUEST["password"])){
               $lg = user_login($_REQUEST["username"],$_REQUEST["password"]);
+            
               $count = mysqli_num_rows($lg);
+        
               if($count == 1){
                 while($user = mysqli_fetch_assoc($lg))
+                    
                     $_SESSION['usager'] = $user;
+
                 header("Location: index.php?commande=Articles");
               }else{
                 $donnees["errorMsg"] = "Wrong Crendentials";
@@ -58,9 +59,8 @@ switch($commande){
         require_once("vues/footer.php");
         
         break;
-    
     case "Logout":
-        session_start();
+        // session_start();
         $_SESSION = array();
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();

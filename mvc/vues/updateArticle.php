@@ -4,15 +4,18 @@
         <link rel="stylesheet" href="css/styles.css" />
         <meta charset="utf-8" />
     </head>
-    <body>
-    <?php 
-
-session_start();
+<body>
+<?php 
+// nav bar et form update article
 include('vues/navbar.php');
+
 if(isset($donnees["errorMsg"])){
+
     echo "<h3 class='alert'>".$donnees["errorMsg"]."</h3>";
 }
+
 ?>
+
 <form class="update-article-form" action="index.php?commande=updateArticle&idArticle=<?php echo $_REQUEST['idArticle'] ?>" method="POST">
 <div class="update-article-input">
    <label for="titre" class="update-title-label">Titre</label>
@@ -24,5 +27,9 @@ if(isset($donnees["errorMsg"])){
     </div>
     <button class="btn" type="submit">Modifier</button>
 </form>
+
+
 </body>
+
+
 </html>
